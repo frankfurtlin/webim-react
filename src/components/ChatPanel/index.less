@@ -1,0 +1,332 @@
+.top {
+    position: relative;
+    width: 100%;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top span {
+    font-size: 15px;
+    color: var(--grey);
+}
+
+.top span .name {
+    color: var(--dark);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+.c-chat__content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.c-cp__down {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.4;
+    span {
+        font-size: 24px;
+    }
+}
+
+.chat {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding: 40px 35px 10px;
+    border-width: 1px 1px 1px 0;
+    border-color: var(--light);
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.chat.active-chat {
+    display: block;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.chat.active-chat::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.bubble {
+    transition-timing-function: cubic-bezier(0.4, -0.04, 1, 1);
+}
+
+.bubble.you {
+    align-self: flex-start;
+    float: left;
+}
+
+.bubble.me {
+    float: right;
+    align-self: flex-end;
+}
+
+.bubble:nth-last-of-type(10) {
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+}
+
+.bubble:nth-last-of-type(9) {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+
+.bubble:nth-last-of-type(8) {
+    -webkit-animation-duration: 0.45s;
+    animation-duration: 0.45s;
+}
+
+.bubble:nth-last-of-type(7) {
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+}
+
+.bubble:nth-last-of-type(6) {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+}
+
+.bubble:nth-last-of-type(5) {
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+}
+
+.bubble:nth-last-of-type(4) {
+    -webkit-animation-duration: 1.05s;
+    animation-duration: 1.05s;
+}
+
+.bubble:nth-last-of-type(3) {
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+}
+
+.bubble:nth-last-of-type(2) {
+    -webkit-animation-duration: 1.35s;
+    animation-duration: 1.35s;
+}
+
+.bubble:nth-last-of-type(1) {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
+.c-cp__item_chat {
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 8px;
+    padding: 13px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.c-cp__wrap .c-cp__item_chat:before {
+    position: absolute;
+    top: 14px;
+    display: block;
+    width: 8px;
+    height: 6px;
+    background-color: var(--blue);
+    z-index: 1;
+    content: '\00a0';
+    -webkit-transform: rotate(29deg) skew(-35deg);
+    transform: rotate(29deg) skew(-35deg);
+}
+
+.c-cp__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.c-cp__wrap_me {
+    align-items: flex-end;
+    -webkit-animation-name: slideFromRight;
+    animation-name: slideFromRight;
+}
+
+.c-cp__wrap_you {
+    align-items: flex-start;
+    -webkit-animation-name: slideFromLeft;
+    animation-name: slideFromLeft;
+}
+
+.c-cp__name {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 5px;
+}
+
+.c-cp__item_me {
+    color: var(--dark);
+    background-color: #eceff1;
+    align-self: flex-end;
+}
+
+.c-cp__item_you {
+    color: var(--white);
+    background-color: var(--blue);
+    align-self: flex-start;
+}
+
+.c-cp__item_you:before {
+    left: -4px;
+    background-color: var(--blue);
+}
+
+.c-cp__item_me:before {
+    right: -4px;
+    background-color: #eceff1;
+}
+
+.write-wrap {
+    width: 100%;
+    padding: 10px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.write {
+    height: 42px;
+    border: 1px solid var(--light);
+    background-color: #eceff1;
+    width: calc(100% - 58px);
+    border-radius: 5px;
+}
+
+.write input {
+    font-size: 16px;
+    float: left;
+    width: 347px;
+    height: 40px;
+    padding: 0 10px;
+    color: var(--dark);
+    border: 0;
+    outline: none;
+    background-color: #eceff1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.write .write-link.attach:before {
+    /* display: inline-block; */
+    float: left;
+    width: 20px;
+    height: 42px;
+    content: '';
+    background-image: url("../../assets/images/attachment.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.write .write-link.smiley:before {
+    float: left;
+    width: 20px;
+    height: 42px;
+    content: '';
+    background-image: url("../../assets/images/smiley.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.write .write-link.send:before {
+    float: left;
+    width: 20px;
+    height: 42px;
+    margin-left: 11px;
+    content: '';
+    background-image: url("../../assets/images/send.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.conversation-start {
+    position: relative;
+    width: 100%;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.conversation-start span {
+    font-size: 14px;
+    display: inline-block;
+    color: var(--grey);
+}
+
+.conversation-start span:before,
+.conversation-start span:after {
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    content: '';
+    background-color: var(--light);
+}
+
+.conversation-start span:before {
+    left: 0;
+}
+
+.conversation-start span:after {
+    right: 0;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
