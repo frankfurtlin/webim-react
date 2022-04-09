@@ -24,12 +24,12 @@ export async function userlogin(username, password) {
 
 // 用户注册
 export async function userRegister(username, password, email) {
-    const randomAvatar = randomGenerator();
+    const portrait = randomGenerator();
     const result = await vq('/api/users/register', {
         data: {username,
                password,
                email,
-               randomAvatar,
+               portrait,
             }
     })
     const { user, token, success } = result;
@@ -38,7 +38,7 @@ export async function userRegister(username, password, email) {
         localStorage.setItem('token', token)
         localStorage.setItem('uid', user._id)
         // 生成一个随机的形象。
-        store.dispatch(updateSyncAvatoar(randomAvatar, false))
+        store.dispatch(updateSyncAvatoar(portrait, false))
     }
     return result;
 } 
@@ -53,10 +53,10 @@ export async function setUserIsOnLine(isOnLine) {
 }
 
 // 修改头像
-export async function updateAvatoar(avatoar) {
-    return await vq('/api/users/avatoar', {
+export async function updateAvatoar(portrait) {
+    return await vq('/api/users/portrait', {
         data: {
-            avatoar,
+            portrait,
         }
     })
 }

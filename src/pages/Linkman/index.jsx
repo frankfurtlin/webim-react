@@ -44,6 +44,7 @@ function Linkman(props) {
     async function onSearch(searchValue) {
         if (!searchValue) return;
         const queryList = await queryLinkMan(searchValue)
+
         setQueryList(queryList)
         if (!queryList.length) {
             message.success('未找到符合的用户')

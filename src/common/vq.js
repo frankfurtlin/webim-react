@@ -12,7 +12,7 @@ vq.interceptors.request.use(
     config => {
         const token = localStorage.getItem('token')
         const uid = localStorage.getItem('uid')
-        console.log(process.env.NODE_ENV);
+        
         if(process.env.NODE_ENV === 'production') {
             config.url = config.url.replace(/\/api/,''); 
         }

@@ -30,7 +30,7 @@ const tailLayout = {
 
 function Space(props) {
     const { updateAvatoarAction, onClose, userInfo, type = 'home' } = props;
-    const { avatoar: option } = userInfo;
+    const { portrait: option } = userInfo;
 
     const onFinish = async (values) => {
         const { email, radio: sex, username: nickname, signature } = values;
