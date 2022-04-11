@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import {Avatoar_Generator} from '../../common/global'
-import { AVATOAR_MAP, OPTION_MAP } from '../../common/avatoar_map';
+import {Avatar_Generator} from '../../common/global'
+import { AVATAR_MAP, OPTION_MAP } from '../../common/avatar_map';
 import {  Select, Button } from 'antd';
 import './index.less'
 
@@ -11,12 +11,12 @@ export default function ChangeAvatar(props) {
         <Fragment>
             <div className="c-ca__content">
                 {
-                    Object.keys(Avatoar_Generator).map((item, index)=> (
+                    Object.keys(Avatar_Generator).map((item, index)=> (
                      <label key={index}>
-                        <span>{AVATOAR_MAP[item]}</span>
+                        <span>{AVATAR_MAP[item]}</span>
                         <Select value={optionCopy[item]} style={{ width: 120 }} onChange={(value)=> changeOptionFn(item, value)}>
                             {
-                               Avatoar_Generator[item].map((option, index)=> (
+                               Avatar_Generator[item].map((option, index)=> (
                                     <Select.Option key={index} value={option}>{OPTION_MAP[option]}</Select.Option>
                                 ))
                             }

@@ -1,5 +1,5 @@
 // console.log(process.env.NODE_ENV, 1111111111);
-export const Avatoar_Generator = {
+export const Avatar_Generator = {
     AvatarStyle: [
         'Circle',
         'Transparent',

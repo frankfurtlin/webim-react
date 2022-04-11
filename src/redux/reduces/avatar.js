@@ -1,7 +1,7 @@
-const avatoar = (prevState = {}, action)=> {
+const avatar = (prevState = {}, action)=> {
     const {type, option = {}} = action;
     switch (type) {
-        case 'changeAvatoar':
+        case 'changeAvatar':
             let newState = {
                 ...prevState,
                 ...option,
@@ -12,4 +12,4 @@ const avatoar = (prevState = {}, action)=> {
     }
 }
 
-export default avatoar;
+export default avatar;

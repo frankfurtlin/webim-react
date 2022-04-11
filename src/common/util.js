@@ -1,11 +1,11 @@
-import { Avatoar_Generator } from '../common/global'
+import { Avatar_Generator } from './global'
 
 export const randomGenerator = ()=> {
-    let rowdomAvatoarObj = {};
-    for(let i in Avatoar_Generator) {
-        let arr = Avatoar_Generator[i]
+    let randomAvatarObj = {};
+    for(let i in Avatar_Generator) {
+        let arr = Avatar_Generator[i]
         const randomIndex = Math.floor(Math.random() * arr.length)
-        rowdomAvatoarObj[i] =arr[randomIndex]
+        randomAvatarObj[i] =arr[randomIndex]
     } 
-    return rowdomAvatoarObj;
+    return randomAvatarObj;
 }

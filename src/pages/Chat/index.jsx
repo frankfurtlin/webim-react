@@ -22,14 +22,14 @@ import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import Session from '../Session';
 import Linkman from '../Linkman';
 import Group from '../Group';
-import { updateSyncAvatoar } from '../../redux/actions/avatoar';
+import { updateSyncAvatar } from '../../redux/actions/avatar';
 import ChatPanel from '../../components/ChatPanel';
 import { chatContext } from '../../common/context';
 
 
 function Chat(props) {
     const { updateUserInfoAction,
-        updateSyncAvatoar,
+        updateSyncAvatar,
         sessionList,
         validationList,
         linkManList,
@@ -82,7 +82,7 @@ function Chat(props) {
         if (!converId) {
             updateCurrentConverId((sessionList[0] || {}).converId)
         }
-        updateSyncAvatoar(userInfo.avatoar, false)
+        updateSyncAvatar(userInfo.avatar, false)
         // 将页面变为正常状态
         const timer = setTimeout(() => {
             setPageStatus(true)
@@ -98,15 +98,9 @@ function Chat(props) {
         return chatData.find(item => item._id === converId) || {}
     }, [converId, chatData])
 
-    // React.useEffect(()=> {
-    //     // let currentDataObj =  chatData.find(data=> data._id === currentSeleltConvId) || {}
-    //     // syncUpdateHistoryAction(currentDataObj)
-    // }, [currentSeleltConvId])
-
     function onClickSession() {
         setRightType('chat')
     }
-
 
     const currentChatUser = React.useMemo(() => {
         return sessionList.find(item => item.converId === converId) || {}
@@ -217,7 +211,7 @@ const mapSteteToProps = (store) => {
 const mapDispatchToProps = {
     updateUserInfoAction,
     updateSessionAction,
-    updateSyncAvatoar,
+    updateSyncAvatar,
     updateLinkmanAction,
     updateValidaAction,
     syncUpdateChatDataAction,

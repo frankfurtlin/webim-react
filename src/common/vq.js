@@ -41,7 +41,7 @@ vq.interceptors.response.use(
     error => {
       const errorCode = (error.response || {}).status || 404
       if(errorCode === 401) { 
-        message.error('登陆状态失效，请重新登陆', 1, ()=>{
+        message.error('登录状态失效，请重新登录', 1, ()=>{
             window.location.pathname = '/account'
         })
       }else{

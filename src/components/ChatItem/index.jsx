@@ -54,7 +54,7 @@ function ChatItem(props) {
             {
                 type === 'session' ?
                     <div className="c-item__session">
-                        <Avatar option={data.avatoar || {}} size='small' />
+                        <Avatar option={data.avatar || {}} size='small' />
                         <div className="c-item__session-main">
                             <span className="c-item__session-name">{data.nickname}</span>
                             <span className="c-item__session-preview">{currentChatData}</span>
@@ -67,7 +67,7 @@ function ChatItem(props) {
             {
                 type === 'search' ?
                     <div className="c-item__session">
-                        <Avatar option={data.avatoar || {}} size='small' />
+                        <Avatar option={data.avatar || {}} size='small' />
                         <div className="c-item__session-main">
                             <span className="c-item__session-name">{data.nickname}</span>
                             <span className="c-item__session-preview">{data.isOnLine ? '在线' : lastLoginTime}</span>
@@ -80,7 +80,7 @@ function ChatItem(props) {
             {
                 type === 'group' ?
                     <div className="c-item__session">
-                        <Avatar option={data.avatoar || {}} size='small' />
+                        <Avatar option={data.avatar || {}} size='small' />
                         <div className="c-item__session-main">
                             <span className="c-item__session-name">{data.nickname}</span>
                             <span className="c-item__session-preview">{data.isOnLine ? '在线' : lastLoginTime}</span>
@@ -96,7 +96,7 @@ function ChatItem(props) {
                 type === 'validation' ?
                     <div key={data.nickname} className="c-item__validation">
                         <div className="c-item__validation-icon">
-                            <Avatar option={data.avatoar || {}} />
+                            <Avatar option={data.avatar || {}} />
                         </div>
                         <div className="c-item__validation-wrap">
                             <span className="c-item__session-name">{data.nickname}</span>
@@ -113,7 +113,7 @@ function ChatItem(props) {
             {
                 type === 'linkman' ?
                     <div className="c-item__session">
-                        <Avatar option={data.avatoar || {}} />
+                        <Avatar option={data.avatar || {}} />
                         <div className="c-item__session-main">
                             <span className="c-item__session-name">{data.nickname}</span>
                             <span className="c-item__session-preview">{data.signature}</span>

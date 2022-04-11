@@ -105,7 +105,7 @@ function Group(props) {
                         return (
                             <li onClick={()=> onClickItem(item)} key={item.converId} className="c-group__content-item">
                                 <div className="c-group__content-item-icon">{randomIcon(item.converId)}</div>
-                                <div className="c-group__content-item-des">{item.groupName}（{item.size}）</div>
+                                <div className="c-group__content-item-des">{item.groupName}({item.size})</div>
                             </li>
                         )
                     })

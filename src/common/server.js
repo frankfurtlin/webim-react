@@ -1,6 +1,6 @@
 import { message } from "antd";
 import { addGroupAction } from "../redux/actions/group";
-import { updateSyncAvatoar } from "../redux/actions/avatoar";
+import { updateSyncAvatar } from "../redux/actions/avatar";
 import { syncAppendConverAction } from "../redux/actions/currentChatData";
 import {store} from "../redux/store";
 import { randomGenerator } from "./util";
@@ -24,12 +24,12 @@ export async function userlogin(username, password) {
 
 // 用户注册
 export async function userRegister(username, password, email) {
-    const portrait = randomGenerator();
+    const avatar = randomGenerator();
     const result = await vq('/api/users/register', {
         data: {username,
                password,
                email,
-               portrait,
+               avatar,
             }
     })
     const { user, token, success } = result;
@@ -38,7 +38,7 @@ export async function userRegister(username, password, email) {
         localStorage.setItem('token', token)
         localStorage.setItem('uid', user._id)
         // 生成一个随机的形象。
-        store.dispatch(updateSyncAvatoar(portrait, false))
+        store.dispatch(updateSyncAvatar(avatar, false))
     }
     return result;
 } 
@@ -53,10 +53,10 @@ export async function setUserIsOnLine(isOnLine) {
 }
 
 // 修改头像
-export async function updateAvatoar(portrait) {
-    return await vq('/api/users/portrait', {
+export async function updateAvatar(avatar) {
+    return await vq('/api/users/avatar', {
         data: {
-            portrait,
+            avatar,
         }
     })
 }

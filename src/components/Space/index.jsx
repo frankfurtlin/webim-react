@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import './index.less'
 import { connect } from 'react-redux';
 import { randomGenerator } from '../../common/util';
-import { updateAvatoarAction, updateSyncAvatoar } from '../../redux/actions/avatoar';
+import { updateAvatarAction, updateSyncAvatar } from '../../redux/actions/avatar';
 import { updateUserInfoAction, updateSyncUserInfo } from '../../redux/actions/userinfo';
 import ChangeAvatar from '../ChangeAvatar'
 import { Form, Input, Button, Radio, message } from 'antd';
@@ -29,8 +29,8 @@ const tailLayout = {
 
 
 function Space(props) {
-    const { updateAvatoarAction, onClose, userInfo, type = 'home' } = props;
-    const { portrait: option } = userInfo;
+    const { updateAvatarAction, onClose, userInfo, type = 'home' } = props;
+    const { avatar: option } = userInfo;
 
     const onFinish = async (values) => {
         const { email, radio: sex, username: nickname, signature } = values;
@@ -75,8 +75,8 @@ function Space(props) {
     }
 
     function submitOption() {
-        store.dispatch(updateSyncAvatoar(optionCopy))
-        updateAvatoarAction(optionCopy);
+        store.dispatch(updateSyncAvatar(optionCopy))
+        updateAvatarAction(optionCopy);
         onClose()
     }
 
@@ -178,19 +178,11 @@ const mapStateToProps = (store) => {
 }
 
 const mapDispatchToProps = {
-    updateAvatoarAction,
-    updateSyncAvatoar,
+    updateAvatarAction,
+    updateSyncAvatar,
     updateUserInfoAction,
     updateSyncUserInfo,
 }
-
-// const mapDispatchToProps = (dispatch)=> {
-//     return {
-//         changeAvatar: (option)=> {
-//             dispatch(updateAvatoarAction(option))
-//         }
-//     }
-// }
 
 Space.propTypes = {
     type: PropTypes.string,

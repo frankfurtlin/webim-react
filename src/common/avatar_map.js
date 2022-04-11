@@ -1,4 +1,4 @@
-export const AVATOAR_MAP = {
+export const AVATAR_MAP = {
     AvatarStyle: '背景',
     Top: '头部',
     Accessories: '眼饰',

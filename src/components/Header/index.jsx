@@ -15,7 +15,7 @@ function Header(props) {
     const menu = (
         <div className="c-header__more-menu">
           <p onClick={onTabPerson}>个人资料</p>
-          <p>黑暗模式</p>
+          {/* <p>黑暗模式</p> */}
           <p onClick={onClickLogout}>注销</p>
         </div>
       );
@@ -48,7 +48,7 @@ function Header(props) {
 const mapStateToProps = (store)=> {
         return {
         login: store.login,
-        option: store.avatoar,
+        option: store.avatar,
         userInfo: store.userInfo,
     }
 }

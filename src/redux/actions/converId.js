@@ -1,2 +1,2 @@
 
-export const updateCurrentConverId = (currentConverId)=> ({type: 'changeConverId', currentConverId})
+export const updateCurrentConverId = (currentConverId) => ({ type: 'changeConverId', currentConverId })
