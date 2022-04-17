@@ -177,6 +177,7 @@ function Chat(props) {
                                 <Space userInfo={currentUserInfo} type='home' />
                         }
                     </div>
+                    
                     <Drawer
                         className="c-chat-drawer"
                         title="个人资料"

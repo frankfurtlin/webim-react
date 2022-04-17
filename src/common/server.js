@@ -78,12 +78,14 @@ export async function queryUserInfo() {
     return result;
 }
 
+// 获取会话列表
 export async function fetchContactList() {
     return await vq('/api/chat/contact', {
 
     })
 }
 
+// 获取聊天数据
 export async function fetchChatHistoryData() {
     return await vq('/api/chat/chatData', {
 
@@ -107,7 +109,6 @@ export async function addLinkMan(username) {
         }
     })
 }
-
 
 // 拉群聊
 export async function createGroup(usersList) {

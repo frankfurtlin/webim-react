@@ -9,7 +9,7 @@ let ws = null;
 // 此处使用了单例模式，每次new getWebSecket 都返回同一个实例
 function getWebSecket() {
     if(ws) return ws;
-    ws = new WebSocket('ws://127.0.0.1:7779')
+    ws = new WebSocket('ws://127.0.0.1:3002')
 
     const SUB_UID = localStorage.getItem('uid');
 
@@ -27,6 +27,7 @@ function getWebSecket() {
         const { data: wsData } = msg;
         const parseData = JSON.parse(wsData);
         const {type, data} = parseData;
+        
         if(type === 'session') {
             store.dispatch(syncUpdateHistoryAction(data))
         }else if(type === 'linkmanRequest') {

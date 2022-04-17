@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { connect } from 'react-redux';
 import { getWebSecket } from '../../common/websocket';
 import { syncUpdateHistoryAction } from '../../redux/actions/currentChatData';
-import { Input } from 'antd';
+import { Input, Badge } from 'antd';
 import moment from 'moment'
 import "moment/locale/zh-cn";
 import './index.less'
@@ -122,7 +122,10 @@ function ChatPanel(props) {
                                             :
                                             null
                                     }
-                                    <div className={`c-cp__item_chat ${item.isMySelf ? 'c-cp__item_me' : 'c-cp__item_you'}`}>{item.content}</div>
+                                    <Badge dot = {item.isRead}>
+                                        <div className={`c-cp__item_chat ${item.isMySelf ? 'c-cp__item_me c-cp__item_chat_me' : 'c-cp__item_you c-cp__item_chat_you'}`}>{item.content}</div>
+                                    </Badge>
+
                                 </div>
                             )
                         })

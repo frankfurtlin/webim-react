@@ -4,7 +4,7 @@ import { message } from 'antd';
 const vq  = axios.create({
     method: 'post',
     timeout: 3000,
-    baseURL : process.env.NODE_ENV === 'production' ? 'http://localhost:7777' : 'http://localhost:3000'
+    baseURL : process.env.NODE_ENV === 'production' ? 'http://localhost:3001' : 'http://localhost:3000'
 })
 
 // http request 拦截器 

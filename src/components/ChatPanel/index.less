@@ -124,23 +124,47 @@
     animation-duration: 1.5s;
 }
 
-.c-cp__item_chat {
+.c-cp__item_chat_you {
     font-size: 16px;
     position: relative;
     margin-bottom: 8px;
     padding: 13px 14px;
     vertical-align: top;
     border-radius: 5px;
+    border-top-right-radius: 6px;
     z-index: 10;
 }
 
-.c-cp__wrap .c-cp__item_chat:before {
+.c-cp__wrap .c-cp__item_chat_you:before {
     position: absolute;
     top: 14px;
     display: block;
     width: 8px;
     height: 6px;
     background-color: var(--blue);
+    z-index: 1;
+    content: '\00a0';
+    -webkit-transform: rotate(29deg) skew(-35deg);
+    transform: rotate(29deg) skew(-35deg);
+}
+
+.c-cp__item_chat_me {
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 8px;
+    padding: 13px 14px;
+    vertical-align: top;
+    border-radius: 7px;
+    z-index: 10;
+}
+
+.c-cp__wrap .c-cp__item_chat_me:before {
+    position: absolute;
+    top: 14px;
+    display: block;
+    width: 8px;
+    height: 6px;
+    background-color: #eceff1;
     z-index: 1;
     content: '\00a0';
     -webkit-transform: rotate(29deg) skew(-35deg);
