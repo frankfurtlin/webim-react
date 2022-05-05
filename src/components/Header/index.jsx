@@ -4,6 +4,7 @@ import './index.less'
 import {store} from '../../redux/store';
 import { connect } from 'react-redux';
 import Avatar from '../Avatar';
+import { SortAscendingOutlined } from '@ant-design/icons';
 
 function Header(props) {
     const [popoverVisible, setPopoverVisible] = React.useState(false)
@@ -28,7 +29,7 @@ function Header(props) {
     return (
         <div className="c-header">
             <div onClick={onTabPerson} className="c-header__avatar">
-                <Avatar option={option} size="small"/>
+                <Avatar option={userInfo.avatar} size="small"/>
             </div>
             <div className="c-header__name">
                 {userInfo.nickname}

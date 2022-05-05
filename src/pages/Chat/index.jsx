@@ -82,7 +82,9 @@ function Chat(props) {
         if (!converId) {
             updateCurrentConverId((sessionList[0] || {}).converId)
         }
-        updateSyncAvatar(userInfo.avatar, false)
+
+        // updateSyncAvatar(userInfo.avatar, false)
+
         // 将页面变为正常状态
         const timer = setTimeout(() => {
             setPageStatus(true)
